@@ -5,9 +5,10 @@ import LanguageSelector from './components/LanguageSelector';
 import FeatureCard from './components/FeatureCard';
 import HowItWorks from './components/HowItWorks';
 import TestimonialCarousel from './components/TestimonialCarousel';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import ImageAnalysis from './components/ImageAnalysis';
+import InstallPWA from './components/InstallPWA';
 
 // Language context
 interface LanguageContextType {
@@ -47,7 +48,6 @@ function LanguageProvider({ children }: { children: React.ReactNode }) {
 function HomePage() {
   const { language, setLanguage } = useContext(LanguageContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navigate = useNavigate();
 
   const t = translations[language as keyof typeof translations] || translations.english;
 
@@ -238,7 +238,7 @@ function HomePage() {
                 description={t.features.cropSelection.description}
                 iconColor="text-green-600"
                 buttonColor="bg-green-600 hover:bg-green-700"
-                onClick={() => navigate('/crop-selection')}
+                onClick={() => window.open('https://crop-selection.netlify.app', '_blank')}
               />
               <FeatureCard
                 Icon={Droplets}
@@ -256,7 +256,7 @@ function HomePage() {
                 description={t.features.diseasePrediction.description}
                 iconColor="text-red-600"
                 buttonColor="bg-red-600 hover:bg-red-700"
-                onClick={() => navigate('/disease-prediction')}
+                onClick={() => window.open('https://disease-prediction-farmai.netlify.app/', '_blank')}
               />
             </div>
           </div>
@@ -454,9 +454,9 @@ export default function App() {
     <LanguageProvider>
       <Routes>
         <Route path="/" element={<HomePage />} />
-       
         <Route path="/plant-analysis" element={<ImageAnalysis />} />
       </Routes>
+      <InstallPWA />
     </LanguageProvider>
   );
 }
