@@ -256,7 +256,7 @@ function HomePage() {
                 description={t.features.diseasePrediction.description}
                 iconColor="text-red-600"
                 buttonColor="bg-red-600 hover:bg-red-700"
-                onClick={() => window.open('https://disease-prediction-farmai.netlify.app/', '_blank')}
+                onClick={() => window.open('https://aleembhd.github.io/disease-prediction/', '_blank')}
               />
             </div>
           </div>
