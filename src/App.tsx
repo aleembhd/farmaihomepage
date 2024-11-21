@@ -238,7 +238,7 @@ function HomePage() {
                 description={t.features.cropSelection.description}
                 iconColor="text-green-600"
                 buttonColor="bg-green-600 hover:bg-green-700"
-                onClick={() => window.open('https://crop-selection.netlify.app', '_blank')}
+                onClick={() => window.open('https://aleembhd.github.io/crop-selection/', '_blank')}
               />
               <FeatureCard
                 Icon={Droplets}
