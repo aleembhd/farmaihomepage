@@ -8,7 +8,6 @@ import TestimonialCarousel from './components/TestimonialCarousel';
 import { Routes, Route } from 'react-router-dom';
 
 import ImageAnalysis from './components/ImageAnalysis';
-import InstallPWA from './components/InstallPWA';
 
 // Language context
 interface LanguageContextType {
@@ -456,7 +455,6 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/plant-analysis" element={<ImageAnalysis />} />
       </Routes>
-      <InstallPWA />
     </LanguageProvider>
   );
 }
